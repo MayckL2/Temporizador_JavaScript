@@ -21,7 +21,14 @@
             <input type="text" id="segundo" placeholder="00">
         </div>
 
-        <button onclick="troca()">Start</button>
+        <div class="butoesNum">
+          <button onclick="adiciona(1)">+1 Min</button>
+          <button onclick="adiciona(10)">+10 Min</button>
+          <button onclick="adiciona(100)">+1 H</button>
+        </div>
+
+        <button onclick="troca()" id="start">Start</button>
+        <button onclick="zera()" id="btnZera">Zerar</button>
     </main>
 
     <audio src="tempo.mp4" type="audio" controls>

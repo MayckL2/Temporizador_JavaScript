@@ -76,3 +76,19 @@ button:hover{
 audio{
     opacity: 0;
 }
+
+.butoesNum button{
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: aqua;
+  color: black;
+  transition: all 0.5s;
+}
+
+.butoesNum button:hover{
+  background-color: blue;
+  color: white;
+}
