@@ -51,6 +51,9 @@ input{
     text-align: center;
     font-family: 'clock';
 }
+input::placeholder{
+  color: white;
+}
 
 span{
     font-size: 45px;
@@ -91,4 +94,13 @@ audio{
 .butoesNum button:hover{
   background-color: blue;
   color: white;
+}
+
+footer{
+  position: absolute;
+  bottom: 20px;
+}
+
+footer a{
+  color: aqua;
 }

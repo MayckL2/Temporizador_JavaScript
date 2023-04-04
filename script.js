@@ -1,14 +1,12 @@
 let hora = document.querySelector("#hora");
 let minuto = document.querySelector("#minuto");
 let segundo = document.querySelector("#segundo");
-let x = 0;
 let comeca = false;
 
 // começa contagem regressiva
 function start() {
   if (comeca == true) {
-    
-    document.querySelector("#btnZera").removeAttribute("disabled")
+    document.querySelector("#btnZera").removeAttribute("disabled");
 
     document.querySelector("audio").pause();
 
@@ -22,7 +20,6 @@ function start() {
       segundo.value = 0;
     }
 
-
     if (minuto.value == 0 && hora.value != 0) {
       minuto.value = 60;
       hora.value -= 1;
@@ -32,7 +29,33 @@ function start() {
       minuto.value -= 1;
     }
 
-    segundo.value -= 1;
+    if(segundo.value >= 0){
+      segundo.value -= 1;
+    }else{
+      alert("insira valores acima de zero")
+    }
+
+    // verifica quantidade de digitos para permanecer dois digitos cara contador
+
+    if (segundo.value.toString().length > 1) {
+      segundo.value = segundo.value;
+    } else {
+      segundo.value = 0 + segundo.value.toString();
+    }
+
+    if (minuto.value.toString().length > 1) {
+      minuto.value = minuto.value;
+    } else {
+      minuto.value = 0 + minuto.value.toString();
+    }
+
+    if (hora.value.toString().length > 1) {
+      hora.value = hora.value;
+    } else {
+      hora.value = 0 + hora.value.toString();
+    }
+
+    document.title = `Temporizador ${hora.value}:${minuto.value}:${segundo.value}`;
 
     if (segundo.value == 0 && minuto.value == 0 && hora.value == 0) {
       document.querySelector("audio").play();
@@ -43,6 +66,8 @@ function start() {
 
 // liga e desliga o contador
 function troca() {
+  m = h = 0;
+
   if (comeca == true) {
     comeca = false;
     document.querySelector("#start").innerHTML = "Start";
@@ -72,25 +97,28 @@ const enter = (event) => {
 };
 
 // zera o contador
-function zera(){
-  troca()
-  hora.value = 0
-  minuto.value = 0
-  segundo.value = 0
+function zera() {
+  troca();
+  hora.value = 0;
+  minuto.value = 0;
+  segundo.value = 0;
 
-  document.querySelector("#btnZera").setAttribute("disabled", true)
+  document.querySelector("#btnZera").setAttribute("disabled", true);
 }
 
 // adicona tempo por botoes
-function adiciona(t){
-  if(t == 1){
-    minuto.value = parseInt(minuto.value + 1)
-  }else if(t == 10){
-    minuto.value = 10
-  }else{
-    hora.value = 1
+let h = (m = 0);
+function adiciona(t) {
+  if (t == 1) {
+    m++;
+    minuto.value = m;
+  } else if (t == 10) {
+    m += 10;
+    minuto.value = m;
+  } else {
+    h++;
+    hora.value = h;
   }
-
 }
 
 setInterval(start, 1000);
