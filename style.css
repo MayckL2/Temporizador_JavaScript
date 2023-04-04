@@ -3,76 +3,127 @@
     src: url(DS-DIGIB.TTF);
 }
 
+*{
+    margin: 0;
+}
+
 body{
-    background-image: radial-gradient(blue 20%, black 80%);
+    font-family: sans-serif;
+    /* background-color: rgb(33, 10, 55); */
+    background-image: radial-gradient(purple 20%, black 80%);
     background-repeat: no-repeat;
     height: 100vh;
-    font-family: sans-serif;
     color: white;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    overflow-y: hidden;
 }
 
 h1{
-    text-transform: uppercase;
-    text-shadow: 5px 5px 5px black;
+    margin: 20px;
+    text-shadow: 1px 3px 5px orange;
     font-family: 'clock';
     font-size: 40px;
 }
 
 main{
-    border: outset white;
-    border-radius: 20px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-@media (max-width: 400px) {
-    main{
-        width: 80%;
-    }
+    background-color: darkslategray;
+    padding: 50px 50px 0px 50px;
+    border-radius: 30%;
+    border: outset 10px gray;
 }
 
-div{
+main div{
+    background-color: gray;
+    /* padding: 5px 10px; */
+    width: 350px;
+    border-radius: 30px;
     display: flex;
-    margin: 20px 0px;
+    justify-content: center;
+    margin-bottom: 30px;
+    border: outset gray;
 }
 
-input{
+main div:nth-of-type(2){
     background-color: transparent;
-    color: white;
-    font-size: 50px;
     border: none;
-    width: 60px;
-    text-align: center;
-    font-family: 'clock';
+    margin: 0px;
+    display: flex;
+    gap: 20px;
 }
 
-span{
-    font-size: 45px;
+main div h2{
+    font-size: 50px;
+    font-family: 'clock', sans-serif;
 }
 
-button{
+main button{
     background-color: transparent;
+    border: outset gray;
+    border-radius: 10px;
+    font-size: 15px;
     color: white;
-    font-size: 20px;
-    margin: 5px;
-    border: outset white;
+    padding: 5px 10px;
+    margin-bottom: 30px;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
+    width: 80px;
     transition: all 0.5s;
 }
 
-button:hover{
-    width: 120px;
+main button:active{
+    border: solid gray;
 }
 
-audio{
-    opacity: 0;
+
+/* main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main div{
+    display: flex;
+    justify-content: center;
+    border: outset;
+    margin: 10px;
+    border-radius: 10px;
+    width: 115px;
+}
+main div h2{
+    margin: 0px;
+    padding: 5px 20px;
+}
+
+input{
+    border: none;
+}
+
+h1{
+    text-shadow: 1px 1px 10px yellow;
+}
+
+main button{
+    padding: 1px 20px;
+    font-size: 20px;
+    margin: 5px 0px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+main button:hover{
+    outline: solid white;
+    background-color: transparent;
+    color: white;
+} */
+
+footer{
+    position: absolute;
+    bottom: 10px;
+    word-spacing: 5px;
+}
+footer a{
+    text-decoration: none;
+    color: aqua;
 }

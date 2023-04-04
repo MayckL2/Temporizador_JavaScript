@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporizador</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="perder-tempo.png">
-</head>
-<body onkeypress="enter(event)">
-    
-    <h1>Temporizador</h1>
+    <title>Cronometro</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body  onkeypress="enter(event)">
+    <h1>Cronometro em JavaScript</h1>
     <main>
         <div>
-            <input type="text" id="hora" placeholder="00">
-            <span> : </span>
-            <input type="text" id="minuto" placeholder="00">
-            <span> : </span>
-            <input type="text" id="segundo" placeholder="00">
+            <h2>
+              <span id="hora">00</span> : 
+              <span id="minuto">00</span> : 
+              <span id="segundo">00</span> :
+              <span id="milisegundo">00</span>
+            </h2>
         </div>
-
-        <button onclick="troca()">Start</button>
+        <div>
+            <button onclick="troca()" id="start">Start</button>
+            <button onclick="reset()">Reset</button>
+        </div>
     </main>
 
-    <audio src="tempo.mp4" type="audio" controls>
-    </audio>
+    <footer>
+        FEITO POR <a href="https://github.com/MayckL2" target="_blank">MAYCK LUCIANO</a>
+    </footer>
 
     <script src="script.js"></script>
 </body>
