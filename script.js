@@ -2,6 +2,7 @@ let hora = document.querySelector("#hora");
 let minuto = document.querySelector("#minuto");
 let segundo = document.querySelector("#segundo");
 let comeca = false;
+let modal= document.querySelector("aside")
 
 // começa contagem regressiva
 function start() {
@@ -58,15 +59,17 @@ function start() {
     document.title = `Temporizador ${hora.value}:${minuto.value}:${segundo.value}`;
 
     if (segundo.value == 0 && minuto.value == 0 && hora.value == 0) {
-      document.querySelector("audio").play();
       troca();
+      modal.style.opacity= "1"
+      modal.style.zIndex= "1"
+      document.querySelector("audio").play();
     }
   }
 }
 
 // liga e desliga o contador
 function troca() {
-  m = h = 0;
+  m = h = "";
 
   if (comeca == true) {
     comeca = false;
@@ -74,8 +77,6 @@ function troca() {
   } else {
     if (hora.value == "" && minuto.value == "" && segundo.value == "") {
       alert("insira algum valor numerico");
-    } else if (hora.value == 0 && minuto.value == 0 && segundo.value == 0) {
-      alert("insira algum valor numerico diferente de zero");
     } else if (
       isNaN(hora.value) ||
       isNaN(minuto.value) ||
@@ -92,7 +93,13 @@ function troca() {
 // aciona funçao pela tecla precionada
 const enter = (event) => {
   if (event.which == 13 || event.which == 32) {
-    troca();
+    if(modal.style.opacity == 1){
+      modal.style.opacity= "0"
+      modal.style.zIndex= "-1"
+      document.querySelector("audio").pause();
+    }else{
+      troca();
+    }
   }
 };
 
@@ -107,7 +114,7 @@ function zera() {
 }
 
 // adicona tempo por botoes
-let h = (m = 0);
+let h = m = "";
 function adiciona(t) {
   if (t == 1) {
     m++;

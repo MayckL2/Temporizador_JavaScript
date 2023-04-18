@@ -1,86 +1,84 @@
 @font-face {
-    font-family: 'clock';
-    src: url(DS-DIGIB.TTF);
+  font-family: 'clock';
+  src: url(DS-DIGIB.TTF);
 }
 
-body{
-    background-image: radial-gradient(blue 20%, black 80%);
-    background-repeat: no-repeat;
-    height: 100vh;
-    font-family: sans-serif;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+body {
+  background-image: radial-gradient(blue 20%, black 80%);
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1{
-    text-transform: uppercase;
-    text-shadow: 5px 5px 5px black;
-    font-family: 'clock';
-    font-size: 40px;
+h1 {
+  text-transform: uppercase;
+  text-shadow: 5px 5px 5px black;
+  font-family: 'clock';
+  font-size: 40px;
 }
 
-main{
-    border: outset white;
-    border-radius: 20px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+main {
+  border: outset white;
+  border-radius: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
+
 @media (max-width: 400px) {
-    main{
-        width: 80%;
-    }
+  main {
+    width: 80%;
+  }
 }
 
-div{
-    display: flex;
-    margin: 20px 0px;
+div {
+  display: flex;
+  margin: 20px 0px;
 }
 
-input{
-    background-color: transparent;
-    color: white;
-    font-size: 50px;
-    border: none;
-    width: 60px;
-    text-align: center;
-    font-family: 'clock';
+input {
+  background-color: transparent;
+  color: white;
+  font-size: 50px;
+  border: none;
+  width: 60px;
+  text-align: center;
+  font-family: 'clock';
 }
-input::placeholder{
+
+input::placeholder {
   color: white;
 }
 
-span{
-    font-size: 45px;
+span {
+  font-size: 45px;
 }
 
-button{
-    background-color: transparent;
-    color: white;
-    font-size: 20px;
-    margin: 5px;
-    border: outset white;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    transition: all 0.5s;
+button {
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  border: outset white;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  transition: all 0.5s;
 }
 
-button:hover{
-    width: 120px;
+main #start:hover, main #btnZera:hover {
+  width: 120px;
 }
 
-audio{
-    opacity: 0;
-}
-
-.butoesNum button{
+.butoesNum button {
   font-size: 13px;
   font-weight: bold;
   border-radius: 50%;
@@ -91,21 +89,21 @@ audio{
   transition: all 0.5s;
 }
 
-.butoesNum button:hover{
+.butoesNum button:hover {
   background-color: blue;
   color: white;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 20px;
 }
 
-footer a{
+footer a {
   color: aqua;
 }
 
-aside{
+aside {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -113,9 +111,12 @@ aside{
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  z-index: -1;
 }
 
-aside div{
+aside div {
+  position: absolute;
   background-color: aqua;
   display: flex;
   flex-direction: column;
@@ -125,16 +126,18 @@ aside div{
   gap: 20px;
   width: 300px;
 }
+
 @media (max-width: 390px) {
-  aside div{
+  aside div {
     width: 90%;
   }
-  aside div audio{
+
+  aside div audio {
     width: 90%;
   }
 }
 
-aside div button{
+aside div button {
   background-color: blue;
   border: none;
   border-radius: 50%;
@@ -146,10 +149,15 @@ aside div button{
 }
 
 @keyframes btnParar {
-  0%{box-shadow: 1px 1px 20px 10px blue;}
-  100%{box-shadow: 1px 1px 0px 0px blue;}
+  0% {
+    box-shadow: 1px 1px 20px 10px blue;
+  }
+
+  100% {
+    box-shadow: 1px 1px 0px 0px blue;
+  }
 }
 
-aside audio{
+aside audio {
   opacity: 1;
 }
