@@ -2,7 +2,7 @@ let hora = document.querySelector("#hora");
 let minuto = document.querySelector("#minuto");
 let segundo = document.querySelector("#segundo");
 let comeca = false;
-let modal= document.querySelector("aside")
+let modal = document.querySelector("aside");
 
 // começa contagem regressiva
 function start() {
@@ -22,18 +22,18 @@ function start() {
     }
 
     if (minuto.value == 0 && hora.value != 0) {
-      minuto.value = 59;
+      minuto.value = 60;
       hora.value -= 1;
     }
     if (segundo.value == 0 && minuto.value != 0) {
-      segundo.value = 59;
+      segundo.value = 60;
       minuto.value -= 1;
     }
 
-    if(segundo.value >= 0){
+    if (segundo.value >= 0) {
       segundo.value -= 1;
-    }else{
-      alert("insira valores acima de zero")
+    } else {
+      alert("insira valores acima de zero");
     }
 
     // verifica quantidade de digitos para permanecer dois digitos cara contador
@@ -60,8 +60,8 @@ function start() {
 
     if (segundo.value == 0 && minuto.value == 0 && hora.value == 0) {
       troca();
-      modal.style.opacity= "1"
-      modal.style.zIndex= "1"
+      modal.style.opacity = "1";
+      modal.style.zIndex = "1";
       document.querySelector("audio").play();
     }
   }
@@ -77,6 +77,9 @@ function troca() {
   } else {
     if (hora.value == "" && minuto.value == "" && segundo.value == "") {
       alert("insira algum valor numerico");
+      document.querySelector("#btnZera").setAttribute("disabled", true);
+    } else if (hora.value == 0 && minuto.value == 0 && segundo.value == 0) {
+      document.querySelector("#btnZera").setAttribute("disabled", true);
     } else if (
       isNaN(hora.value) ||
       isNaN(minuto.value) ||
@@ -93,12 +96,14 @@ function troca() {
 // aciona funçao pela tecla precionada
 const enter = (event) => {
   if (event.which == 13 || event.which == 32) {
-    if(modal.style.opacity == 1){
-      modal.style.opacity= "0"
-      modal.style.zIndex= "-1"
-      document.querySelector("audio").pause();
-    }else{
+    if (comeca == false) {
       troca();
+    }
+
+    if (modal.style.opacity == 1) {
+      modal.style.opacity = "0";
+      modal.style.zIndex = "-1";
+      document.querySelector("audio").pause();
     }
   }
 };
@@ -114,7 +119,7 @@ function zera() {
 }
 
 // adicona tempo por botoes
-let h = m = "";
+let h = (m = "");
 function adiciona(t) {
   if (t == 1) {
     m++;
