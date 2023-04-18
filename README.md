@@ -2,7 +2,7 @@
 
 <hr>
 
-<img alt="print_temporizador" src="https://user-images.githubusercontent.com/103364944/230164019-40e00bce-dc09-4bdb-91ee-afccd6b3c98c.png">
+<img alt="print_temporizador" src="https://user-images.githubusercontent.com/103364944/232877731-59b5c9b5-f3ef-4311-84fc-fa38096c1c65.PNG">
 
 <hr>
 
