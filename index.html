@@ -10,15 +10,23 @@
 </head>
 <body onkeypress="enter(event)">
 
+  <aside>
+    <div>
+      <audio src="tempo.mp4" type="audio" controls>
+      </audio>
+      <button>PARAR</button>
+    </div>
+  </aside>
+
     <h1>Temporizador</h1>
 
     <main>
         <div>
-            <input type="text" id="hora" placeholder="00">
+            <input type="text" id="hora" disabled placeholder="00">
             <span> : </span>
-            <input type="text" id="minuto" placeholder="00">
+            <input type="text" id="minuto" disabled placeholder="00">
             <span> : </span>
-            <input type="text" id="segundo" placeholder="00">
+            <input type="text" id="segundo" disabled placeholder="00">
         </div>
 
         <div class="butoesNum">
@@ -30,9 +38,6 @@
         <button onclick="troca()" id="start">Start</button>
         <button onclick="zera()" id="btnZera">Zerar</button>
     </main>
-
-    <audio src="tempo.mp4" type="audio" controls>
-    </audio>
 
     <footer>
       FEITO POR <a href="https://github.com/MayckL2" target="_blank">MAYCK LUCIANO</a>

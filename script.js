@@ -21,11 +21,11 @@ function start() {
     }
 
     if (minuto.value == 0 && hora.value != 0) {
-      minuto.value = 60;
+      minuto.value = 59;
       hora.value -= 1;
     }
     if (segundo.value == 0 && minuto.value != 0) {
-      segundo.value = 60;
+      segundo.value = 59;
       minuto.value -= 1;
     }
 
@@ -99,9 +99,9 @@ const enter = (event) => {
 // zera o contador
 function zera() {
   troca();
-  hora.value = 0;
-  minuto.value = 0;
-  segundo.value = 0;
+  hora.value = "";
+  minuto.value = "";
+  segundo.value = "";
 
   document.querySelector("#btnZera").setAttribute("disabled", true);
 }
